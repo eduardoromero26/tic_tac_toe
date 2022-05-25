@@ -3,9 +3,9 @@
 # Home
 ## Screenshot
 
-![Home](assets/images/home-ttt.png)
+![Home](assets/images/home_ttt.png)
 
 # GameBoard
 ## Screenshot
 
-![GameBoard](assets/images/gameboard_ttt.png)
+![GameBoard](assets/images/gameboard-ttt.png)
