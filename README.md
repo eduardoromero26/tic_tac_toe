@@ -8,4 +8,4 @@
 # GameBoard
 ## Screenshot
 
-![GameBoard](assets/images/gameboard-ttt.png)
+![GameBoard](assets/images/gameboard_ttt.png)
