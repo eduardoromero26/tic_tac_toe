@@ -300,9 +300,9 @@ class _GameScreenState extends State<GameScreen> {
           );
         });
 
-    if (winner == 'assets/images/circulo.png') {
+    if (winner == 'Player O') {
       oScore++;
-    } else if (winner == 'assets/images/cruz.png') {
+    } else if (winner == 'Player X') {
       xScore++;
     }
   }
