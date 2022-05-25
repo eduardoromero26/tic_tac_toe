@@ -277,6 +277,11 @@ class _GameScreenState extends State<GameScreen> {
   }
 
   void _showWinDialog(String winner) {
+    if (winner == "assets/images/circulo.png"){
+      winner = "Player O";
+    } else{
+      winner = 'Player X';
+    }
     showDialog(
         barrierDismissible: false,
         context: context,
