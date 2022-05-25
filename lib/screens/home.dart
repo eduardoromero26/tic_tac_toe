@@ -26,11 +26,16 @@ class _HomePageState extends State<HomePage> {
             const Text("Choose your play mode",
                 style: TextStyle(
                   fontFamily: "Aileron",
-                  fontSize: 24,
+                  fontSize: 22,
                 )),
             const SizedBox(height: 44),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const GameScreen()),
+                );
+              },
               child: Container(
                 height: 60,
                 width: 240,
@@ -56,13 +61,13 @@ class _HomePageState extends State<HomePage> {
                     ]),
                 child: const Center(
                   child: Text(
-                    'With IA',
+                    'With a Friend',
                     style: TextStyle(
                       fontFamily: "Aileron",
                       fontWeight: FontWeight.w300,
                       fontSize: 22,
                       letterSpacing: 0.0,
-                      color: Colors.black,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -72,12 +77,7 @@ class _HomePageState extends State<HomePage> {
               height: 16,
             ),
             GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const GameScreen()),
-                );
-              },
+              onTap: () {},
               child: Container(
                 height: 60,
                 width: 240,
@@ -96,11 +96,11 @@ class _HomePageState extends State<HomePage> {
                     ]),
                 child: const Center(
                   child: Text(
-                    'With a Friend',
+                    'With IA - Cooming Soon',
                     style: TextStyle(
                       fontFamily: "Aileron",
                       fontWeight: FontWeight.w300,
-                      fontSize: 22,
+                      fontSize: 18,
                       letterSpacing: 0.0,
                       color: Colors.black,
                     ),

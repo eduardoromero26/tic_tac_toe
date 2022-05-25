@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class GameScreen extends StatefulWidget {
@@ -29,41 +30,81 @@ class _GameScreenState extends State<GameScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.all(30.0),
+                    padding: const EdgeInsets.only(left: 30, right: 30),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
-                        const Text(
-                          'Player X',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black),
+                        Row(
+                          children: [
+                            const Text(
+                              'Player X',
+                              style: TextStyle(
+                                  fontFamily: "Aileron",
+                                  fontSize: 22,
+                                  color: Colors.black),
+                            ),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            Container(
+                              height: 40,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(25.0),
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.3),
+                                      spreadRadius: 4,
+                                      blurRadius: 10,
+                                      offset: const Offset(0, 3),
+                                    )
+                                  ]),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    xScore.toString(),
+                                    style: const TextStyle(
+                                        fontSize: 22,
+                                        color: Colors.black,
+                                        fontFamily: "Aileron",
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  const Text(" - "),
+                                  Text(
+                                    oScore.toString(),
+                                    style: const TextStyle(
+                                        fontFamily: "Aileron",
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 22,
+                                        color: Colors.black),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            const Text('Player O',
+                                style: TextStyle(
+                                    fontFamily: "Aileron",
+                                    fontSize: 22,
+                                    color: Colors.black)),
+                          ],
                         ),
-                        Text(
-                          xScore.toString(),
-                          style: const TextStyle(
-                              fontSize: 20, color: Colors.black),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        const Text('Player O',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black)),
-                        Text(
-                          oScore.toString(),
-                          style: const TextStyle(
-                              fontSize: 20, color: Colors.black),
-                        ),
+                        SizedBox(
+                          height: 8,
+                        )
                       ],
                     ),
                   ),
@@ -75,7 +116,7 @@ class _GameScreenState extends State<GameScreen> {
             flex: 3,
             child: Center(
               child: Container(
-                margin: EdgeInsets.all(20.0),
+                margin: const EdgeInsets.all(20.0),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: const BorderRadius.all(
@@ -122,16 +163,41 @@ class _GameScreenState extends State<GameScreen> {
               child: Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                RaisedButton(
-                  color: Colors.indigo[50],
-                  textColor: Colors.black,
-                  onPressed: _clearScoreBoard,
-                  child: const Text("Clear Score Board"),
+                Container(
+                  height: 40,
+                  width: 160,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(25.0),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          spreadRadius: 4,
+                          blurRadius: 10,
+                          offset: const Offset(0, 3),
+                        )
+                      ]),
+                  child: TextButton(
+                    onPressed: _clearScoreBoard,
+                    child: const Text(
+                      "Clear Score Board",
+                      style: TextStyle(
+                        fontFamily: "Aileron",
+                        fontWeight: FontWeight.w300,
+                        fontSize: 16,
+                        letterSpacing: 0.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
-          ))
+          )),
         ],
       ),
     );
@@ -213,7 +279,7 @@ class _GameScreenState extends State<GameScreen> {
         barrierDismissible: false,
         context: context,
         builder: (BuildContext context) {
-          return AlertDialog(
+          return CupertinoAlertDialog (
             title: Text("\" " + winner + " \" is Winner!!!"),
             actions: [
               TextButton(
@@ -227,9 +293,9 @@ class _GameScreenState extends State<GameScreen> {
           );
         });
 
-    if (winner == 'O') {
+    if (winner == 'assets/images/circulo.png') {
       oScore++;
-    } else if (winner == 'X') {
+    } else if (winner == 'assets/images/cruz.png') {
       xScore++;
     }
   }
@@ -239,7 +305,7 @@ class _GameScreenState extends State<GameScreen> {
         barrierDismissible: false,
         context: context,
         builder: (BuildContext context) {
-          return AlertDialog(
+          return CupertinoAlertDialog (
             title: const Text("Draw"),
             actions: [
               TextButton(
