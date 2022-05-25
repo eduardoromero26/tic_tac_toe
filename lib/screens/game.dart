@@ -102,7 +102,7 @@ class _GameScreenState extends State<GameScreen> {
                                     color: Colors.black)),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 8,
                         )
                       ],
@@ -147,11 +147,13 @@ class _GameScreenState extends State<GameScreen> {
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey)),
                             child: Center(
-                                child: Image.asset(
-                              displayElement[index],
-                              height: 52,
-                              width: 52,
-                            )),
+                                child: displayElement[index] == ""
+                                    ? Container()
+                                    : Image.asset(
+                                        displayElement[index],
+                                        height: 52,
+                                        width: 52,
+                                      )),
                           ),
                         );
                       }),
@@ -279,7 +281,7 @@ class _GameScreenState extends State<GameScreen> {
         barrierDismissible: false,
         context: context,
         builder: (BuildContext context) {
-          return CupertinoAlertDialog (
+          return CupertinoAlertDialog(
             title: Text("\" " + winner + " \" is Winner!!!"),
             actions: [
               TextButton(
@@ -305,7 +307,7 @@ class _GameScreenState extends State<GameScreen> {
         barrierDismissible: false,
         context: context,
         builder: (BuildContext context) {
-          return CupertinoAlertDialog (
+          return CupertinoAlertDialog(
             title: const Text("Draw"),
             actions: [
               TextButton(
