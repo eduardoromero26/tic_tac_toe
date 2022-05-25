@@ -287,7 +287,7 @@ class _GameScreenState extends State<GameScreen> {
         context: context,
         builder: (BuildContext context) {
           return CupertinoAlertDialog(
-            title: Text("\" " + winner + " \" is Winner!!!"),
+            title: Text("\" " + winner + " \" Win!!!"),
             actions: [
               TextButton(
                 child: const Text("Play Again"),

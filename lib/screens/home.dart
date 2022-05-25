@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                     ]),
                 child: const Center(
                   child: Text(
-                    'With IA - Cooming Soon',
+                    'With AI - Cooming Soon',
                     style: TextStyle(
                       fontFamily: "Aileron",
                       fontWeight: FontWeight.w300,
